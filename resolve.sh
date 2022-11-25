@@ -6,7 +6,7 @@
 
 # if no argument is given, use the default list
 # list of numbers [1, 2, 52, 68]
-nums=(1 2 5 21 52 68)
+nums=(1 2 5 7 14 21 52 68)
 # if one argument is given, verify that it is a number, and use it as the list
 if [ $# -eq 1 ]; then
     if [[ $1 =~ ^[0-9]+$ ]]; then
@@ -15,7 +15,7 @@ if [ $# -eq 1 ]; then
         if [[ " ${nums[@]} " =~ " $1 " ]]; then
             nums=($1)
         else
-            echo "Error: $1 is not implemented yet"
+            echo "Error: challenge $1 is not implemented yet"
             exit 1
         fi
 

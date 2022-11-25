@@ -29,4 +29,4 @@ requests:
         name: password
         part: body
         regex:
-          - "I(.*?)g"
+          - "<strong>[a-zA-Z0-9!@#$%^&*()_+,.]+"

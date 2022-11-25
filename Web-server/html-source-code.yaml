@@ -27,4 +27,4 @@ requests:
         name: password
         part: body
         regex:
-          - "password : (.*?)0"
+          - "password : [a-zA-Z0-9!@#$%^&*()_+,.<>?]+"

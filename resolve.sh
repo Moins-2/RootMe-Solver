@@ -49,3 +49,9 @@ for nb in ${nums[@]}; do
         nuclei -u "http://challenge01.root-me.org/web-serveur/ch${nb}/" -t Web-server/ -eid "File_upload-Type_MIME" -silent
     fi
 done
+
+# print a stylized message to show that the script has finished with the number of challenges resolved
+total=${#nums[@]}
+echo -e "\e[1;32m==========================\e[0m"
+echo -e "\e[1;32m= $total challenges resolved =\e[0m"
+echo -e "\e[1;32m==========================\e[0m"

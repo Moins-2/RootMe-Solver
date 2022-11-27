@@ -5,7 +5,7 @@
     "ch": 1,
     "points": 5,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
   {
     "name": "HTML - IP restriction bypass",
@@ -13,7 +13,7 @@
     "ch": 68,
     "points": 10,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
   {
     "name": "HTTP - Open redirect",
@@ -21,7 +21,7 @@
     "ch": 52,
     "points": 10,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
   {
     "name": "HTTP - User-agent",
@@ -29,7 +29,7 @@
     "ch": 2,
     "points": 10,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
   {
     "name": "Weak password",
@@ -37,7 +37,7 @@
     "ch": 3,
     "points": 10,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
   {
     "name": "HTTP - Directory indexing",
@@ -45,7 +45,7 @@
     "ch": 4,
     "points": 15,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
   {
     "name": "HTTP - Headers",
@@ -53,7 +53,7 @@
     "ch": 5,
     "points": 15,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
   {
     "name": "HTTP - POST",
@@ -61,7 +61,7 @@
     "ch": 56,
     "points": 15,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
   {
     "name": "HTTP - Improper redirect",
@@ -69,7 +69,7 @@
     "ch": 32,
     "points": 15,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
   {
     "name": "HTTP - Verb tampering",
@@ -77,7 +77,7 @@
     "ch": 8,
     "points": 15,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
   {
     "name": "CRLF",
@@ -85,7 +85,7 @@
     "ch": 14,
     "points": 20,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
   {
     "name": "File upload - MIME type",
@@ -93,7 +93,7 @@
     "ch": 21,
     "points": 20,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
   {
     "name": "HTTP - Cookies",
@@ -101,7 +101,7 @@
     "ch": 7,
     "points": 20,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
   {
     "name": "File upload - Null byte",
@@ -109,7 +109,7 @@
     "ch": 22,
     "points": 25,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
 
   {
@@ -118,7 +118,7 @@
     "ch": 9,
     "points": 30,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
 
   {
@@ -127,7 +127,7 @@
     "ch": 19,
     "points": 30,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
 
   {
@@ -136,7 +136,7 @@
     "ch": 18,
     "points": 35,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   },
 
   {
@@ -145,6 +145,6 @@
     "ch": 34,
     "points": 40,
     "tools": ["nuclei"],
-    "script": "resolver-nuclei.sh"
+    "script": "solver-nuclei.sh"
   }
 ]

@@ -1,39 +1,39 @@
-# resolver.sh - Resolve challenges from root-me.org
+# solver.sh - solve challenges from root-me.org
 
-# Usage: resolver.sh [OPTIONS] [CHALLENGE_NUMBER]
+# Usage: solver.sh [OPTIONS] [CHALLENGE_NUMBER]
 # Arguments:
 #   -d, --debug: show additional information
 #   -h, --help: show this help message
-#   -n, --name: resolve challenges by name
-#   -a, --all: resolve all challenges
-#   -t, --tools: resolve challenges using tools     !!!! IN DEVELOPMENT !!!!
+#   -n, --name: solve challenges by name
+#   -a, --all: solve all challenges
+#   -t, --tools: solve challenges using tools     !!!! IN DEVELOPMENT !!!!
 #   -et, --exclude-tools: exclude challenges using tools
 
 #!/bin/bash
 
 # help function
 function help {
-    echo "resolver.sh - Resolve challenges from root-me.org
+    echo "solver.sh - solve challenges from root-me.org
 
 "
-    echo "Usage: resolver.sh [OPTIONS] [CHALLENGE_NUMBER]
+    echo "Usage: solver.sh [OPTIONS] [CHALLENGE_NUMBER]
 Arguments:
   -d, --debug: show additional information
   -h, --help: show this help message
-  -n, --name: resolve challenges by name
-  -a, --all: resolve all challenges
+  -n, --name: solve challenges by name
+  -a, --all: solve all challenges
 "
 
     echo "Usage:"
-    echo "  resolver.sh <challenge number>"
-    echo "  resolver.sh -n <challenge name>"
-    echo "  resolver.sh <challenge number> -d"
-    echo "  resolver.sh <challenge number> --debug"
-    echo "  resolver.sh -h"
-    echo "  resolver.sh --help"
-    echo "  resolver.sh -a"
-    echo "  resolver.sh <challenge number> -t <tool> -t <tool>"
-    echo "  resolver.sh <challenge number> -et <tool> "
+    echo "  solver.sh <challenge number>"
+    echo "  solver.sh -n <challenge name>"
+    echo "  solver.sh <challenge number> -d"
+    echo "  solver.sh <challenge number> --debug"
+    echo "  solver.sh -h"
+    echo "  solver.sh --help"
+    echo "  solver.sh -a"
+    echo "  solver.sh <challenge number> -t <tool> -t <tool>"
+    echo "  solver.sh <challenge number> -et <tool> "
 }
 
 ###### Parse arguments ######
@@ -135,7 +135,7 @@ for tool in $tools; do
     done
 done
 
-###### Get challenges resolver from json ######
+###### Get challenges solver from json ######
 
 # If the challenge name is given, verify it and get the challenge number
 if [ $name = true ]; then
@@ -165,11 +165,11 @@ function get_challenge_number {
     challenge_number=$(cat challenge.json | jq -r ".[] | select(.name == $1) | .ch")
 }
 
-# Get the challenge resolver from the json file
-function get_challenge_resolver {
-    # get the challenge resolver from the json file
-    challenge_resolver=$(cat challenge.json | jq -r ".[] | select(.ch == $1) | .script")
-    # check if the challenge resolver is valid
+# Get the challenge solver from the json file
+function get_challenge_solver {
+    # get the challenge solver from the json file
+    challenge_solver=$(cat challenge.json | jq -r ".[] | select(.ch == $1) | .script")
+    # check if the challenge solver is valid
     if [[ $1 = "" ]]; then
         echo "Error: invalid challenge number $1"
         help
@@ -183,12 +183,12 @@ function set_flags {
     fi
 }
 
-# Use the challenge resolver to resolve the challenge
-function resolve_challenge {
-    # get the challenge resolver and execute it
-    get_challenge_resolver $1
+# Use the challenge solver to solve the challenge
+function solve_challenge {
+    # get the challenge solver and execute it
+    get_challenge_solver $1
     if [ $debug = true ]; then
-        echo "Executing $challenge_resolver $1"
+        echo "Executing $challenge_solver $1"
     fi
     # Stylized announcement with the challenge name and number
     # in rectangle
@@ -196,10 +196,10 @@ function resolve_challenge {
     echo "║  Resolving challenge $1: $challenge_name"
     echo "╚════════════════════════════════════════════╝"
 
-    "./$challenge_resolver" -c $1 $flags
+    "./$challenge_solver" -c $1 $flags
 }
 
-# Resolve all challenges
+# solve all challenges
 if [ $all = true ]; then
     # get all the challenges
     challenges=$(cat challenge.json | jq -r ".[].ch")
@@ -208,15 +208,15 @@ else
 fi
 set_flags
 
-# resolve each challenge
+# solve each challenge
 for challenge in $challenges; do
     get_challenge_name $challenge
-    resolve_challenge $challenge
+    solve_challenge $challenge
 done
 
-# Print the number of challenges (length of "challenges") resolved in a stylized way
+# Print the number of challenges (length of "challenges") solved in a stylized way
 echo "╔════════════════════════════════════════════╗"
-echo "║  Resolved $(($(echo $challenges | wc -w))) challenges"
+echo "║  solved $(($(echo $challenges | wc -w))) challenges"
 echo "╚════════════════════════════════════════════╝"
 
 exit 0

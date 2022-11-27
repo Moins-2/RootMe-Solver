@@ -2,23 +2,23 @@
 
 # help function
 function help {
-    echo "resolver-nuclei.sh - Resolve challenges using nuclei
+    echo "solver-nuclei.sh - solve challenges using nuclei
 
 "
     echo "Arguments:"
     echo "  -d, --debug: show the nuclei output"
     echo "  -h, --help: show this help message"
-    echo "  -n, --name: resolve challenges by name"
-    echo "  -c, --challenge: resolve challenges by number
+    echo "  -n, --name: solve challenges by name"
+    echo "  -c, --challenge: solve challenges by number
 
 "
     echo "Usage:"
-    echo "  resolver-nuclei.sh -n <challenge name>"
-    echo "  resolver-nuclei.sh -c <challenge number>"
-    echo "  resolver-nuclei.sh -c <challenge number> -d"
-    echo "  resolver-nuclei.sh -c <challenge number> --debug"
-    echo "  resolver-nuclei.sh -h"
-    echo "  resolver-nuclei.sh --help"
+    echo "  solver-nuclei.sh -n <challenge name>"
+    echo "  solver-nuclei.sh -c <challenge number>"
+    echo "  solver-nuclei.sh -c <challenge number> -d"
+    echo "  solver-nuclei.sh -c <challenge number> --debug"
+    echo "  solver-nuclei.sh -h"
+    echo "  solver-nuclei.sh --help"
 }
 
 ###### Parse arguments ######
@@ -122,7 +122,7 @@ fi
 #In challenge_name, remove spaces
 challenge_name=$(echo $challenge_name | tr -d ' ')
 
-###### Resolve the challenge ######
+###### solve the challenge ######
 
 # create the flags string
 if [ $debug = true ]; then

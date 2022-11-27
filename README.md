@@ -1,14 +1,26 @@
 # Nuclei Templates for RootMe
 
-This template is used to resolve challenges on the rootme website.
+This script is used to solve the challenges of the [RootMe](https://www.root-me.org/) platform.
+
+## Disclaimer
+
+This project is done to practice automation and to learn more about some tools, to be able to extend it with more real situations. Do not use it on challenges you didn't solve yourself.
 
 ## How to use
 
 1. Connect to the rootme website and get the challenge number (as in the url)
-2. Run `./resolve.sh` to resolve all the challenges
-3. Or run `./resolve.sh <challenge_number>` to resolve only one challenge
+2. Run `./solver.sh --all` to solve all the challenges
+3. Or run `./solver.sh <challenge_number>` to solve only one challenge
 
-## How to contribute
+You can specify tools that you don't want to use, ... Everything is detailled if you run `./solver.sh --help`
+
+## Contribute
+
+### What do the repo need
+
+From documentation, adding small features or adding new solutions, there are a lot of things to do. You can find some in issues.
+
+### How to contribute
 
 1. Fork the project
 2. Create a branch

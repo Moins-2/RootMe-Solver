@@ -40,6 +40,14 @@
     "script": "solver-nuclei.sh"
   },
   {
+    "name": "PHP - Command injection",
+    "description": "The web server is vulnerable to command injection. What is the password?",
+    "ch": 54,
+    "points": 10,
+    "tools": ["nuclei"],
+    "script": "solver-nuclei.sh"
+  },
+  {
     "name": "HTTP - Directory indexing",
     "description": "The web server is vulnerable to directory indexing. What is the password?",
     "ch": 4,

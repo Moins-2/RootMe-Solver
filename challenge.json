@@ -88,9 +88,25 @@
     "script": "solver-nuclei.sh"
   },
   {
+    "name": "Install files",
+    "description": "The web server is vulnerable to install files. What is the password?",
+    "ch": 6,
+    "points": 15,
+    "tools": ["nuclei"],
+    "script": "solver-nuclei.sh"
+  },
+  {
     "name": "CRLF",
     "description": "The web server is vulnerable to CRLF. What is the password?",
     "ch": 14,
+    "points": 20,
+    "tools": ["nuclei"],
+    "script": "solver-nuclei.sh"
+  },
+  {
+    "name": "File upload - Double extensions",
+    "description": "The web server is vulnerable to file upload. What is the password?",
+    "ch": 20,
     "points": 20,
     "tools": ["nuclei"],
     "script": "solver-nuclei.sh"

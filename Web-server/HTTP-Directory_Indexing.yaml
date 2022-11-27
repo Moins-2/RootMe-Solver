@@ -1,18 +1,15 @@
-id: HTTP-Headers
+id: HTTP-DirectoryIndexing
 
 info:
-  name: HTTP Headers
+  name: HTTP Directory Indexing
   author: Tomitom13
   severity: unknown
-  tags: http,headers,rootme
+  tags: http,rootme, directory-indexing
 
 requests:
-  - method: POST
+  - method: GET
     path:
-      - "{{BaseURL}}"
-    headers:
-      Header-RootMe-Admin: "true"
-
+      - "{{BaseURL}}/admin/backup/admin.txt"
     matchers-condition: and
     matchers:
       - type: status
@@ -21,7 +18,7 @@ requests:
 
       - type: word
         words:
-          - "password"
+          - "Password / Mot de passe : "
         part: body
 
     extractors:
@@ -29,4 +26,4 @@ requests:
         name: password
         part: body
         regex:
-          - "password [a-zA-Z0-9!@#$%^&*()_+,.<>?]+"
+          - "Mot de passe : [a-zA-Z0-9!@#$%^&*()_+,.<>?]+"

@@ -18,4 +18,4 @@ This template is used to resolve challenges on the rootme website.
 
 ## Other
 
-Feel free to contribute to this project by adding new templates or improving existing ones. For any questions or tips, feel free to contact me on Twitter [@TomitoMoinsDeux](https://twitter.com/TomitoMoinsDeux).
+Feel free to contribute to this project by adding new templates, improving existing ones, or adding explainations. For any questions or tips, feel free to contact me on Twitter [@TomitoMoinsDeux](https://twitter.com/TomitoMoinsDeux).

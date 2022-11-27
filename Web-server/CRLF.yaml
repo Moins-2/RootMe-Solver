@@ -1,7 +1,7 @@
-id: CLRF
+id: CRLF
 
 info:
-  name: CLRF
+  name: CRLF
   author: Tomitom13
   severity: unknown
   tags: clrf,rootme

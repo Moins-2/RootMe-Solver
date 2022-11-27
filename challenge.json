@@ -1,0 +1,150 @@
+[
+  {
+    "name": "HTML - Source code",
+    "description": "The source code of the page is available. What is the password?",
+    "ch": 1,
+    "points": 5,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+  {
+    "name": "HTML - IP restriction bypass",
+    "description": "The web server is only accessible from the local network. What is the password?",
+    "ch": 68,
+    "points": 10,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+  {
+    "name": "HTTP - Open redirect",
+    "description": "The web server is vulnerable to open redirect. What is the password?",
+    "ch": 52,
+    "points": 10,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+  {
+    "name": "HTTP - User-agent",
+    "description": "The web server is vulnerable to user-agent bypass. What is the password?",
+    "ch": 2,
+    "points": 10,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+  {
+    "name": "Weak password",
+    "description": "The web server is vulnerable to a weak password. What is the password?",
+    "ch": 3,
+    "points": 10,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+  {
+    "name": "HTTP - Directory indexing",
+    "description": "The web server is vulnerable to directory indexing. What is the password?",
+    "ch": 4,
+    "points": 15,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+  {
+    "name": "HTTP - Headers",
+    "description": "The web server is vulnerable to headers. What is the password?",
+    "ch": 5,
+    "points": 15,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+  {
+    "name": "HTTP - POST",
+    "description": "The web server is vulnerable to POST. What is the password?",
+    "ch": 56,
+    "points": 15,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+  {
+    "name": "HTTP - Improper redirect",
+    "description": "The web server is vulnerable to improper redirect. What is the password?",
+    "ch": 32,
+    "points": 15,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+  {
+    "name": "HTTP - Verb tampering",
+    "description": "The web server is vulnerable to verb tampering. What is the password?",
+    "ch": 8,
+    "points": 15,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+  {
+    "name": "CRLF",
+    "description": "The web server is vulnerable to CRLF. What is the password?",
+    "ch": 14,
+    "points": 20,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+  {
+    "name": "File upload - MIME type",
+    "description": "The web server is vulnerable to MIME type. What is the password?",
+    "ch": 21,
+    "points": 20,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+  {
+    "name": "HTTP - Cookies",
+    "description": "The web server is vulnerable to cookies. What is the password?",
+    "ch": 7,
+    "points": 20,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+  {
+    "name": "File upload - Null byte",
+    "description": "The web server is vulnerable to null byte. What is the password?",
+    "ch": 22,
+    "points": 25,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+
+  {
+    "name": "SQL injection - Authentication",
+    "description": "The web server is vulnerable to SQL injection. What is the password?",
+    "ch": 9,
+    "points": 30,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+
+  {
+    "name": "SQL injection - String",
+    "description": "The web server is vulnerable to SQL injection. What is the password?",
+    "ch": 19,
+    "points": 30,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+
+  {
+    "name": "SQL injection - Numeric",
+    "description": "The web server is vulnerable to SQL injection. What is the password?",
+    "ch": 18,
+    "points": 35,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  },
+
+  {
+    "name": "SQL injection - Error",
+    "description": "The web server is vulnerable to SQL injection. What is the password?",
+    "ch": 34,
+    "points": 40,
+    "tools": ["nuclei"],
+    "script": "resolver-nuclei.sh"
+  }
+]

@@ -128,6 +128,14 @@
     "script": "solver-nuclei.sh"
   },
   {
+    "name": "Directory traversal",
+    "description": "The web server is vulnerable to directory traversal. What is the password?",
+    "ch": 15,
+    "points": 25,
+    "tools": ["nuclei"],
+    "script": "solver-nuclei.sh"
+  },
+  {
     "name": "File upload - Null byte",
     "description": "The web server is vulnerable to null byte. What is the password?",
     "ch": 22,
@@ -135,7 +143,22 @@
     "tools": ["nuclei"],
     "script": "solver-nuclei.sh"
   },
-
+  {
+    "name": "PHP - Register globals",
+    "description": "The web server is vulnerable to register globals. What is the password?",
+    "ch": 17,
+    "points": 25,
+    "tools": ["nuclei"],
+    "script": "solver-nuclei.sh"
+  },
+  {
+    "name": "Local File Inclusion",
+    "description": "The web server is vulnerable to local file inclusion. What is the password?",
+    "ch": 16,
+    "points": 30,
+    "tools": ["nuclei"],
+    "script": "solver-nuclei.sh"
+  },
   {
     "name": "SQL injection - Authentication",
     "description": "The web server is vulnerable to SQL injection. What is the password?",

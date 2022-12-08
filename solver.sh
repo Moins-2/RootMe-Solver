@@ -196,7 +196,12 @@ function solve_challenge {
     echo "║  Resolving challenge $1: $challenge_name"
     echo "╚════════════════════════════════════════════╝"
 
-    "./$challenge_solver" -c $1 $flags
+    if [[ $challenge_solver = "" ]]; then
+        echo "This one is not implemented yet $1: $challenge_name"
+    else
+        # execute the challenge solver
+        "./$challenge_solver" -c $1 $flags
+    fi
 }
 
 # solve all challenges

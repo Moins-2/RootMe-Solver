@@ -8,7 +8,7 @@
     "script": "solver-nuclei.sh"
   },
   {
-    "name": "HTML - IP restriction bypass",
+    "name": "HTTP - IP restriction bypass",
     "description": "The web server is only accessible from the local network. What is the password?",
     "ch": 68,
     "points": 10,
@@ -128,6 +128,22 @@
     "script": "solver-nuclei.sh"
   },
   {
+    "name": "Insecure Code Management",
+    "description": "The web server is vulnerable to insecure code management. What is the password?",
+    "ch": 61,
+    "points": 20,
+    "tools": [],
+    "script": ""
+  },
+  {
+    "name": "JSON Web Token (JWT) - Introduction",
+    "description": "The web server is vulnerable to JSON web token introduction. What is the password?",
+    "ch": 51,
+    "points": 20,
+    "tools": [],
+    "script": ""
+  },
+  {
     "name": "Directory traversal",
     "description": "The web server is vulnerable to directory traversal. What is the password?",
     "ch": 15,
@@ -142,6 +158,22 @@
     "points": 25,
     "tools": ["nuclei"],
     "script": "solver-nuclei.sh"
+  },
+  {
+    "name": "JSON Web Token (JWT) - Weak secret",
+    "description": "The web server is vulnerable to a weak secret. What is the password?",
+    "ch": 59,
+    "points": 25,
+    "tools": [],
+    "script": ""
+  },
+  {
+    "name": "JWT - Revoked token",
+    "description": "The web server is vulnerable to a revoked token. What is the password?",
+    "ch": 63,
+    "points": 25,
+    "tools": [],
+    "script": ""
   },
   {
     "name": "PHP - Register globals",

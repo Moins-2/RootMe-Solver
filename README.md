@@ -6,6 +6,13 @@ This script is used to solve the challenges of the [RootMe](https://www.root-me.
 
 This project is done to practice automation and to learn more about some tools, to be able to extend it with more real situations. Do not use it on challenges you didn't solve yourself.
 
+## Setup
+
+You need to install [jq](https://stedolan.github.io/jq/download/) in order to parse JSON files.
+
+Also, you for some challenges you need to install
+[Nuclei](<https://nuclei.projectdiscovery.io/nuclei/get-started/#nuclei-installation>) that needs [Golang](https://go.dev/doc/install)
+
 ## How to use
 
 1. Connect to the rootme website and get the challenge number (as in the url)

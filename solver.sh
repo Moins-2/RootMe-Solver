@@ -47,9 +47,13 @@ number=false
 challenge_number=0
 tools=""
 exclude_tools=""
+tt_challenges=0
 
 # parse arguments for each one
-for arg in "$@"; do
+# parse arguments
+while [[ $# -gt 0 ]]; do
+    arg="$1"
+
     case $arg in
     -d | --debug)
         debug=true
@@ -160,6 +164,49 @@ function get_challenge_name {
     fi
 }
 
+function check_tool {
+
+    # If tools is not empty, check if the challenge tools is in the list of tools
+    if [[ $tools != "" ]]; then
+        # Get the challenge tools from the json file
+        challenge_tools=$(cat challenge.json | jq -r ".[] | select(.ch == $1) | .tools")
+        # check if the challenge tools is valid
+        if [[ $challenge_tools = "" ]]; then
+            echo "Error: invalid challenge tools $challenge_tools"
+            help
+            exit 1
+        fi
+        # tools format: ["tool1", "tool2", "tool3"]
+        # check if the challenge tools is in the list of tools
+        for tool in $tools; do
+            if [[ $challenge_tools =~ $tool ]]; then
+                return 0
+            fi
+        done
+        return 1
+    fi
+    # If exclude_tools is not empty, check if the challenge tools is in the list of excluded tools
+    if [[ $exclude_tools != "" ]]; then
+        # Get the challenge tools from the json file
+        challenge_tools=$(cat challenge.json | jq -r ".[] | select(.ch == $1) | .tools")
+        # check if the challenge tools is valid
+        if [[ $challenge_tools = "" ]]; then
+            echo "Error: invalid challenge tools $challenge_tools"
+            help
+            exit 1
+        fi
+        # tools format: ["tool1", "tool2", "tool3"]
+        # check if the challenge tools is in the list of excluded tools
+        for exclude_tool in $exclude_tools; do
+            if [[ $challenge_tools =~ $exclude_tool ]]; then
+                return 1
+            fi
+        done
+    fi
+
+    return 0
+}
+
 # Get the challenge number from the json file given the challenge name
 function get_challenge_number {
     challenge_number=$(cat challenge.json | jq -r ".[] | select(.name == $1) | .ch")
@@ -171,11 +218,12 @@ function get_challenge_solver {
     challenge_solver=$(cat challenge.json | jq -r ".[] | select(.ch == $1) | .script")
     # check if the challenge solver is valid
     if [[ $1 = "" ]]; then
-        echo "Error: invalid challenge number $1"
+        echo "Error: invalid challenge solver $1"
         help
         exit 1
     fi
 }
+
 function set_flags {
     # set the flags
     if [ $debug = true ]; then
@@ -185,6 +233,13 @@ function set_flags {
 
 # Use the challenge solver to solve the challenge
 function solve_challenge {
+    # Check if the challenge tools is in the exclude list
+    check_tool $1
+    if [ $? -eq 1 ]; then
+        echo -e "\e[1;31mSkipping challenge $1\e[0m: \e[1;33m$challenge_name\e[0m"
+        return
+    fi
+
     # get the challenge solver and execute it
     get_challenge_solver $1
     if [ $debug = true ]; then
@@ -201,6 +256,8 @@ function solve_challenge {
     else
         # execute the challenge solver
         "./$challenge_solver" -c $1 $flags
+        # increment the number of solved challenges
+        tt_challenges=$((tt_challenges + 1))
     fi
 }
 
@@ -221,7 +278,7 @@ done
 
 # Print the number of challenges (length of "challenges") solved in a stylized way
 echo "╔════════════════════════════════════════════╗"
-echo "║  solved $(($(echo $challenges | wc -w))) challenges"
+echo "║  solved $(echo $tt_challenges)"
 echo "╚════════════════════════════════════════════╝"
 
 exit 0

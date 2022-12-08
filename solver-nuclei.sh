@@ -66,7 +66,7 @@ done
 ###### Validate arguments ######
 
 # check if there is a challenge number
-if [ $challenge_number -eq 0 ]; then
+if [ $challenge_number -eq 0 ] && [ $number = true ]; then
     echo "Error: no challenge number was given"
     help
     exit 1

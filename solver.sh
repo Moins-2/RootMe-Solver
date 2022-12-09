@@ -11,25 +11,34 @@
 
 #!/bin/bash
 
+function prompt_start {
+    # Print "Root-Me solver" in ASCII art
+    echo "    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    ┏━━━┓━━━━━━━━━┏┓━━━━━━━━━━━━━┏━━━┓━━━━┏┓━━━━━━━━━━━━
+    ┃┏━┓┃━━━━━━━━┏┛┗┓━━━━━━━━━━━━┃┏━┓┃━━━━┃┃━━━━━━━━━━━━
+    ┃┗━┛┃┏━━┓┏━━┓┗┓┏┛┏┓┏┓┏━━┓━━━━┃┗━━┓┏━━┓┃┃━┏┓┏┓┏━━┓┏━┓
+    ┃┏┓┏┛┃┏┓┃┃┏┓┃━┃┃━┃┗┛┃┃┏┓┃━━━━┗━━┓┃┃┏┓┃┃┃━┃┗┛┃┃┏┓┃┃┏┛
+    ┃┃┃┗┓┃┗┛┃┃┗┛┃━┃┗┓┃┃┃┃┃┃━┫━━━━┃┗━┛┃┃┗┛┃┃┗┓┗┓┏┛┃┃━┫┃┃━
+    ┗┛┗━┛┗━━┛┗━━┛━┗━┛┗┻┻┛┗━━┛━━━━┗━━━┛┗━━┛┗━┛━┗┛━┗━━┛┗┛━
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+}
+
 # help function
 function help {
-    echo "solver.sh - solve challenges from root-me.org
-
-"
-    echo "Usage: solver.sh [OPTIONS] [CHALLENGE_NUMBER]
-Arguments:
+    echo -e "\nsolver.sh - solve challenges from root-me.org\n"
+    echo "Usage: solver.sh [OPTIONS] [CHALLENGE_NUMBER]"
+    echo "Arguments:
   -d, --debug: show additional information
   -h, --help: show this help message
   -n, --name: solve challenges by name
   -a, --all: solve all challenges
-"
+    "
 
     echo "Usage:"
     echo "  solver.sh <challenge number>"
     echo "  solver.sh -n <challenge name>"
-    echo "  solver.sh <challenge number> -d"
     echo "  solver.sh <challenge number> --debug"
-    echo "  solver.sh -h"
     echo "  solver.sh --help"
     echo "  solver.sh -a"
     echo "  solver.sh <challenge number> -t <tool> -t <tool>"
@@ -48,6 +57,8 @@ challenge_number=0
 tools=""
 exclude_tools=""
 tt_challenges=0
+
+prompt_start
 
 # parse arguments for each one
 # parse arguments
